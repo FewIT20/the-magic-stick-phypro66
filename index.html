@@ -90,12 +90,57 @@
             </li>
         </ul>
     </ol>
+    <hr>
     <h2>Source Code</h2>
-    <code>
-        def main():
-            """Main function"""
-            print("Hello World")
-        main()
-    </code>
-</body>
+ <pre><code class="lang-c"><span class="hljs-comment">// defines pins numbers</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> trigPin = <span class="hljs-number">9</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> echoPin = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> buzzer = <span class="hljs-number">11</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> motor = <span class="hljs-number">13</span>;
+
+<span class="hljs-comment">// defines variables</span>
+<span class="hljs-keyword">long</span> duration;
+<span class="hljs-keyword">int</span> distance;
+<span class="hljs-keyword">int</span> safetyDistance;
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>() {
+  <span class="hljs-built_in">pinMode</span>(trigPin, <span class="hljs-literal">OUTPUT</span>); <span class="hljs-comment">// Sets the trigPin as an Output</span>
+  <span class="hljs-built_in">pinMode</span>(echoPin, <span class="hljs-literal">INPUT</span>); <span class="hljs-comment">// Sets the echoPin as an Input</span>
+  <span class="hljs-built_in">pinMode</span>(buzzer, <span class="hljs-literal">OUTPUT</span>);
+  <span class="hljs-built_in">pinMode</span>(motor, <span class="hljs-literal">OUTPUT</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">begin</span>(<span class="hljs-number">9600</span>); <span class="hljs-comment">// Starts the serial communication</span>
+}
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>() {
+  <span class="hljs-comment">// Clears the trigPin</span>
+  <span class="hljs-built_in">digitalWrite</span>(trigPin, <span class="hljs-literal">LOW</span>);
+  <span class="hljs-built_in">delayMicroseconds</span>(<span class="hljs-number">2</span>);
+
+  <span class="hljs-comment">// Sets the trigPin on HIGH state for 10micro seconds</span>
+  <span class="hljs-built_in">digitalWrite</span>(trigPin, <span class="hljs-literal">HIGH</span>);
+  <span class="hljs-built_in">delayMicroseconds</span>(<span class="hljs-number">10</span>);
+  <span class="hljs-built_in">digitalWrite</span>(trigPin, <span class="hljs-literal">LOW</span>);
+
+  <span class="hljs-comment">// Reads the echoPin, returns the sound wave travel time in microseconds</span>
+  duration = <span class="hljs-built_in">pulseIn</span>(echoPin, <span class="hljs-literal">HIGH</span>);
+  <span class="hljs-comment">// Calculating the distance</span>
+  distance= duration*<span class="hljs-number">0.034</span>/<span class="hljs-number">2</span>;
+
+  safetyDistance = distance;
+
+  <span class="hljs-built_in">if</span> (safetyDistance &lt;= <span class="hljs-number">30</span>){
+    <span class="hljs-built_in">digitalWrite</span>(buzzer, <span class="hljs-literal">HIGH</span>);
+    <span class="hljs-built_in">digitalWrite</span>(motor, <span class="hljs-literal">HIGH</span>);
+  }
+
+  <span class="hljs-built_in">else</span>{
+    <span class="hljs-built_in">digitalWrite</span>(buzzer, <span class="hljs-literal">LOW</span>);
+    <span class="hljs-built_in">digitalWrite</span>(motor, <span class="hljs-literal">LOW</span>);
+  }
+
+  <span class="hljs-comment">// Prints the distance on the Serial Monitor</span>
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"Distance: "</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(safetyDistance);
+}
+</code></pre>
 </html>
