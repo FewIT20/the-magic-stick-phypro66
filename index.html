@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit" rel="stylesheet">
 </head>
 <body>
     
-    <img src="" alt="">
+    <div class="topic">
+        Project : The Magic Stick
+    </div>
 
     <div class="container">
     <div class="block">
@@ -56,77 +61,50 @@
     </div>
 
     <div class="container">
+        
         <div class="block">
-            <!-- <div class="slider">
-                <div class="slide">
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
-                    <input type="radio" name="radio-btn" id="radio3">
-                    <input type="radio" name="radio-btn" id="radio4">
-                    <input type="radio" name="radio-btn" id="radio5">
-
-                    <div class="st first">
-                    <img src="https://down-th.img.susercontent.com/file/sg-11134201-7qvfk-lf573qggk4fne6" alt="" class="img1">
-                    </div>
-
-                    <div class="st">
-                        <img src="https://inwfile.com/s-j/lswm5t.jpg" alt="" class="img2">
-                    </div>
-
-                    <div class="st">
-                    <img src="https://spmicrotech.com/wp-content/uploads/2018/04/Ultrasonic-Module-HC-SR04-01.jpg" alt="" class="img3">
-                    </div>
-
-                    <div class="st">
-                    <img src="https://aaloktech.in/wp-content/uploads/2020/09/high-current-active-buzzer-alarm-module800x800.jpg" alt="" class="img4">
-                    </div>
-
-                    <div class="st">
-                    <img src="https://www.tido.tech/wp-content/uploads/2020/09/ผู้-เมีย.jpg" alt="" class="img5">
-                    </div>
-
-                    <div class="nav-auto">
-                        <div class="a-b1"></div>
-                        <div class="a-b2"></div>
-                        <div class="a-b3"></div>
-                        <div class="a-b4"></div>
-                    </div>
-                </div>
-            </div> -->
+            <h1>Equipment</h1>
+                <img class="gif" src="IMG/equipment.gif" alt="">
         </div>
 
     <div class="block">
     <h1>Operation</h1>
     <h2>เครื่องมือที่ใช้ในการดำเนินงาน</h2>
         <ul>
-            ไม้เท้าหัวค้อน
+            - ไม้เท้าหัวค้อน
         </ul>
         <ul>
-            Arduino Uno R3
+            - Arduino Uno R3
         </ul>
         <ul>
-            Ultrasonic Sensor HC-04
+            - Buzzer
         </ul>
         <ul>
-            Buzzer
+            - Ultrasonic Sensor HC-04
         </ul>
         <ul>
-            Switch
+            - Switch
         </ul>
         <ul>
-            สายจัมพ์ ขนาด ... ซม.
+            - สายจัมพ์ ขนาด ... ซม.
         </ul>
     </ol>
     <h2>Procedure</h2>
     <ol>
         <ul>
-            Circuit            
+            <li>
+            Circuit
+        </li>            
         </ul>
         <ul>
+            <li>
             Arduino Uno R3
+            </li>
         </ul>
         <ul>
+            <li>
             Ultrasonic Sensor HC-04
+        </li>
             <li>
                 ขา VCC ต่อเข้า pin …
             </li>
@@ -158,15 +136,27 @@
     </div>
 
     <div class="container">
-    <div class="block video">
+    <div class="block">
+        <div class="container">
+            <div class="block fr">
+                <h1>The Magic Stick</h1>
+                <img src="IMG/S__89333809_0.jpg" alt="" width="100%" height="100%">
+            </div>
+            <div class="block fr">
+                <h1>Arduino</h1>
+                <img class="" src="IMG/S__89333811_0.jpg" alt="" width="100%">
+                
+            </div>
+        </div>
+        <h1>Demo</h1>
         <div class="video">
-            <video controls autoplay muted width="100%">
+            <video controls autoplay muted loop width="100%">
                 <source src="IMG/IMG_2091.MOV">
             </video>
         </div>
     </div>
     <div class="block">
-    <h2>Source Code</h2>
+    <h1>Source Code</h1>
  <pre><code class="lang-c"><span class="hljs-comment">// defines pins numbers</span>
 <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> trigPin = <span class="hljs-number">9</span>;
 <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> echoPin = <span class="hljs-number">10</span>;
@@ -219,4 +209,22 @@
 }
 </div>
 </code></pre>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var blocks = document.querySelectorAll('.container .block');
+    
+        // เริ่ม setTimeout เพื่อให้เฟดอิน block ทีละตัว
+        var delay = 0;
+        blocks.forEach(function(block) {
+            setTimeout(function() {
+                block.style.opacity = 1; // แสดง block โดยการตั้งค่าความโปร่งใสเป็น 1
+            }, delay);
+            delay += 30; // เพิ่มการล่าเฟดอินให้แต่ละ block ทีละ 1 วินาที
+        });
+    });
+</script>
+
+
+</body>
 </html>
