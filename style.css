@@ -42,3 +42,12 @@ h1 {
   border: 1px solid #ccc;
   margin: 10px;
 }
+
+
+.mem{
+  margin-left: 0;
+  margin-right: 0;
+  /* font-size: 20px; */
+  margin: top 10px;
+  text-align: center;
+}
