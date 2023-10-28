@@ -1,3 +1,3 @@
 # the-magic-stick-phypro66
 
-https://www.youtube.com/watch?v=HDuP4i-bEyY
+https://youtu.be/zK_nnL-Ip-Y?si=yjDfuwwWCLlGJCoH
