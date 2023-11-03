@@ -1,4 +1,6 @@
-[Banner_Image](https://github.com/FewIT20/the-magic-stick-phypro66/blob/5b6c1e36c80b24a94d0c402a4145f46956aa50fe/TheMagicStickPoster.jpg?raw=true)
+![Banner_Image](https://github.com/FewIT20/the-magic-stick-phypro66/blob/5b6c1e36c80b24a94d0c402a4145f46956aa50fe/TheMagicStickPoster.jpg?raw=true)
+
+
 (Previwe Clip : https://youtu.be/zK_nnL-Ip-Y?si=yjDfuwwWCLlGJCoH)
 
 # The-Magic-Stick
